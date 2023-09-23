@@ -1,0 +1,22 @@
+°puppeteer es una biblioteca de Node que proporciona una API de alto 
+nivel para controlar navegadores Chrome o Chromium a través del 
+protocolo DevTools. 
+Puppeteer funciona con Chrome en modo sin cabeza (headless) 
+(sin interfaz gráfica) o en modo completo (headful).
+
+Principales usos:
+    Generación de capturas de pantalla y PDFs de páginas web.
+    Automatización de acciones en formularios web.
+    Web scraping: obtener contenido de páginas web.
+    Realizar pruebas en navegadores Chrome.
+
+°body-parser es un middleware para Express.js que se utiliza para 
+analizar el cuerpo (body) de las solicitudes HTTP entrantes. 
+Antes de que Express v4.16.0 introdujera su propio middleware 
+para analizar el cuerpo, body-parser era la forma estándar de 
+hacerlo.
+
+Principales usos:
+
+Analizar cuerpos de solicitudes entrantes en un middleware antes de que llegues a los manejadores.
+Soporta la decodificación de datos en formatos como JSON, texto plano, y datos codificados en x-www-form-urlencoded.

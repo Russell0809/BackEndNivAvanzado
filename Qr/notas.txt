@@ -1,0 +1,21 @@
+Cuando accedemos a la ruta raíz '/' a través del navegador, 
+segenera una solicitud GET, abriendo un formulario. 
+Al presionar el botón, estás enviando una solicitud POST
+a la ruta '/getQR' con los datos del formulario (en este caso, la URL para un código QR).
+
+
+Un QR (del inglés "Quick Response") es un tipo de código de barras bidimensional cuadrado que puede ser escaneado usando un lector de códigos QR o un smartphone con cámara. El código QR está diseñado para almacenar información codificada en un patrón de puntos y espacios en un cuadrado.
+
+Algunas características y usos de los códigos QR:
+
+Almacenamiento de Información: Un QR puede contener datos tales como texto, enlaces web (URLs), ubicaciones geográficas, emails, números de teléfono, entre otros.
+
+Acceso Rápido: Su nombre "Respuesta Rápida" se debe a que permite acceder de manera rápida a la información codificada.
+
+Aplicaciones: Son comúnmente usados en marketing, tickets electrónicos, tarjetas de presentación, etiquetas de productos y más.
+
+Facilidad de Escaneo: La mayoría de los smartphones modernos pueden escanear códigos QR directamente desde la cámara o utilizando aplicaciones específicas.
+
+Personalización y Diseño: Los códigos QR pueden ser personalizados en diseño y color, e incluso pueden incluir logos en su centro sin perder su funcionalidad.
+
+En resumen, un código QR es una herramienta eficiente para almacenar y acceder a información de manera rápida mediante su escaneo.

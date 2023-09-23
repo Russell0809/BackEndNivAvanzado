@@ -1,0 +1,27 @@
+--express: Framework web para Node.js.
+npm init -y
+
+--nodemailer: Módulo para enviar correos electrónicos desde Node.js.
+--multer: Middleware para manejar multipart/form-data, que se usa para subir archivos.
+npm install express nodemailer multer
+
+
+attachments: Es un array que puede contener uno o varios 
+archivos adjuntos para el correo electrónico. 
+En este caso, solo se está añadiendo un archivo:
+
+filename: Es el nombre original del archivo que se envió en la solicitud.
+ req.file.originalname es una propiedad proporcionada por multer 
+ después de procesar el archivo.
+
+content: Es el contenido real del archivo. req.file.buffer 
+es también una propiedad proporcionada por multer y contiene los datos del 
+archivo en un buffer (una estructura de datos que almacena una cantidad de 
+datos en memoria).
+Luego de definir este objeto mailOptions, puedes pasárselo al método 
+sendMail de nodemailer para enviar el correo electrónico con todas las 
+opciones y datos especificados.
+
+En resumen, mailOptions es esencialmente una configuración detallada del correo electrónico 
+que quieres enviar, incluido su contenido, destinatario, asunto y cualquier 
+archivo adjunto.
