@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Correo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #emailForm {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #response {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+
+        #response.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="emailForm" enctype="multipart/form-data">
+        <h1>Enviar Correo</h1>
+        <label>
+            Para: <input type="email" id="to" required>
+        </label>
+        <label>
+            Asunto: <input type="text" id="subject" required>
+        </label>
+        <label>
+            Mensaje: <textarea id="messageBody" rows="4"></textarea>
+        </label>
+        <label>
+            Adjunto: <input type="file" id="file">
+        </label>
+        <button type="button" onclick="sendEmail()">Enviar Correo</button>
+        <div id="response"></div>
+    </form>
+
+    <script>
+        async function sendEmail() {
+            const formData = new FormData(document.getElementById("emailForm"));
+            formData.append("To", document.getElementById("to").value);
+            formData.append("Subject", document.getElementById("subject").value);
+            formData.append("messageBody", document.getElementById("messageBody").value);
+            formData.append("file", document.getElementById("file").files[0]);
+
+            try {
+                const response = await fetch('http://localhost:3001/sendemail', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.text();
+                document.getElementById("response").textContent = result;
+            } catch (error) {
+                console.error("Error al enviar el correo:", error);
+                document.getElementById("response").textContent = "Error al enviar el correo.";
+            }
+        }
+    </script>
+
+</body>
+</html>
